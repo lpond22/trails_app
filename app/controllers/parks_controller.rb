@@ -40,6 +40,14 @@ before_action :set_park, only: [:show, :edit, :update, :destroy]
     end
   end
 
+  def destroy
+    @park.destroy
+    respond_to do |format|
+      format.html { redirect_to parks_url, notice: 'Park was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def set_park
