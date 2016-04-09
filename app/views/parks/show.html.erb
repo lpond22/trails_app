@@ -12,3 +12,14 @@
     <dt>Number of Hikes</dt>
   <dd><%= @park.hikes %></dd>
 </dl>
+
+<p>
+  <%= @park.name %> has
+  <%= link_to_unless(@park.reviews.empty?, "#{@park.reviews.size} reviews", park_reviews_path(@park.id)) do
+      "no reviews"
+   end
+  %>
+</p>
+<p>
+Create a <%= link_to 'Review', new_park_review_path(@park.id) %>
+</p>

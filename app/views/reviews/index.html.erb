@@ -1,0 +1,12 @@
+<header>
+  <h1>Reviews for <%= link_to(@park.name, @park) %></h1>
+</header>
+<ul>
+  <% @reviews.each do |review| %>
+  <li><%= truncate(review.content, length: 20) %>
+    | <%= link_to("Show", park_review_path(@park.id, review.id)) %>
+  </li>
+  <% end %>
+  <hr/><br/>
+  <%= link_to "Create a New Review", new_park_review_path(@park.id) %>
+</ul>
