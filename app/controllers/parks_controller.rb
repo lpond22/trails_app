@@ -1,5 +1,8 @@
 class ParksController < ApplicationController
+
+before_action :authenticate_user!, except: [:index]
 before_action :set_park, only: [:show, :edit, :update, :destroy]
+
   def index
     @parks = Park.all
   end
