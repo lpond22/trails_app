@@ -1,0 +1,48 @@
+<%= form_for(@park) do |f| %>
+
+<% if @park.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@park.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+  <ul>
+    <% @park.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<fieldset>
+  <ul>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true %>
+    </li>
+    <li>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </li>
+    <li>
+      <%= f.label :state %>
+      <%= f.select :state, Park::STATES.to_a.map { |r| [r, r] }, include_blank: true  %>
+    </li>
+    <li>
+      <%= f.label :region %>
+      <%= f.text_field :region%>
+    </li>
+    <li>
+      <%= f.label :dogs %>
+      <%= f.check_box :dogs %>
+    </li>
+    <li>
+      <%= f.label :hikes %>
+      <%= f.number_field :hikes, min: 1, max:25%>
+    </li>
+  </ul>
+  <p>
+     <!-- Create a Submit Button -->
+    <%= f.submit %><br/>
+  </p>
+</fieldset>
+<% end %>
