@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Parks</h1>
+<h1>Most Popular Parks</h1>
 
 <table>
   <thead>
@@ -12,9 +12,12 @@
   <tbody>
     <% @parks.each do |park| %>
       <li><%= park.name %>
-        | <%= link_to 'Show', park %>
-        | <%= link_to 'Edit', edit_park_path(park) %>
-        | <%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <!-- Only show links if we have a current, logged in, user -->
+<% if current_user %>
+    | <%= link_to("Show", park_path(park.id)) %>
+    | <%= link_to "Edit", edit_park_path(park.id) %>
+    | <%= link_to 'Destroy', park_path(park.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
       </li>
     <% end %>
   </tbody>

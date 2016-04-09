@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   before_action :set_park
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @reviews = @park.reviews

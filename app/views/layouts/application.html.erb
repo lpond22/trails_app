@@ -8,20 +8,31 @@
 </head>
 <body>
 
- <p class="notice"><%= notice %></p>
+
+  <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= yield %>
-
-<!-- Show logged in user and links to register, authenticate and log out -->
+  <!-- Show logged in user and links to register, authenticate and log out -->
   <% if user_signed_in? %>
     <p>User <%= current_user.email %> is signed in </p>
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
   <% else %>
     <p>No User is signed in </p>
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Sign In", new_user_session_path, class: 'btn btn-sucess' %>
+    <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-sucess' %>
   <% end %>
 
+<div id = "main-container" class="container">
+ <div class ="row">
+  <div class="col-xs-3">
+   <h3>New England Parks</h3>
+  </div>
+ <div class="col-xs-9">
+  <%= yield %>
+
+
+</div>
+</div>
+</div>
 </body>
 </html>
