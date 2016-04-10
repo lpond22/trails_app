@@ -1,4 +1,4 @@
-<%= form_for(@park) do |f| %>
+<%= form_for(@park, html: {class:"form-group"}) do |f| %>
 
 <% if @park.errors.any? %>
 <div id="error_explanation">
@@ -15,34 +15,56 @@
 
 <fieldset>
   <ul>
-    <li>
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true %>
-    </li>
-    <li>
-      <%= f.label :city %>
-      <%= f.text_field :city %>
-    </li>
-    <li>
-      <%= f.label :state %>
-      <%= f.select :state, Park::STATES.to_a.map { |r| [r, r] }, include_blank: true  %>
-    </li>
-    <li>
-      <%= f.label :region %>
-      <%= f.text_field :region%>
-    </li>
-    <li>
-      <%= f.label :dogs %>
-      <%= f.check_box :dogs %>
-    </li>
-    <li>
-      <%= f.label :hikes %>
-      <%= f.number_field :hikes, min: 1, max:25%>
-    </li>
+  <form class = "form-horizontal">
+    <div class = "field form-group">
+      <%= f.label :name, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class: 'form-control', autofocus: true %>
+    </div>
+    </div>
+
+    <div class = "field form-group">
+      <%= f.label :city, class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
+    </div>
+
+    <div class = "field form-group">
+      <%= f.label :state, class: 'col-sm-2 control-label'  %>
+      <%= f.select :state, Park::STATES.to_a.map { |r| [r, r] }, include_blank: true, class: 'form-control'   %>
+    </div>
+
+
+    <div class = "field form-group">
+      <%= f.label :region, class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-10">
+      <%= f.text_field :region, class: 'form-control' %>
+    </div>
+    </div>
+
+<div class = "field form-group">
+      <%= f.label :dogs, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+      <%= f.check_box :dogs, class: 'form-control'   %>
+      </div>
+      </div>
+<div class = "field form-group">
+      <%= f.label :hikes, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+      <%= f.number_field :hikes, min: 1, max:25, class: 'form-control'  %>
+      </div>
+      </div>
+
   </ul>
   <p>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
      <!-- Create a Submit Button -->
-    <%= f.submit %><br/>
+    <%= f.submit %>
+        </div>
+  </div>
+  <br/>
   </p>
 </fieldset>
 <% end %>

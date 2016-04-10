@@ -1,3 +1,9 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Parks', parks_path %></li>
+  <li><%= link_to 'New Park', new_park_path %></li>
+  <li class="active"><%= link_to 'Show Park', park_path %></li>
+</ul>
+
 <dl>
   <dt>Name:</dt>
   <dd><%= @park.name %></dd>
@@ -15,7 +21,7 @@
 
 <p>
   <%= @park.name %> has
-  <%= link_to_unless(@park.reviews.empty?, "#{@park.reviews.size} reviews", park_reviews_path(@park.id)) do
+  <%= link_to_unless(@park.reviews.empty?, "#{@park.reviews.size} reviews", park_review_path(@park.id)) do
       "no reviews"
    end
   %>

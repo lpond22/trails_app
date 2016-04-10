@@ -12,6 +12,8 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+<%= render 'shared/navigation' %>
+
   <!-- Show logged in user and links to register, authenticate and log out -->
   <% if user_signed_in? %>
     <p>User <%= current_user.email %> is signed in </p>
@@ -22,13 +24,8 @@
     <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-sucess' %>
   <% end %>
 
-<div id = "main-container" class="container">
- <div class ="row">
-  <div class="col-xs-3">
-   <h3>New England Parks</h3>
-  </div>
- <div class="col-xs-9">
-  <%= yield %>
+
+          <%= yield %>
 
 
 </div>

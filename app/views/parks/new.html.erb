@@ -1,3 +1,8 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Parks', parks_path %></li>
+  <li class="active"><%= link_to 'New Park', new_park_path %></li>
+</ul>
+
 <header>
   <h1>Create a new Park listing</h1>
 </header>
@@ -5,3 +10,5 @@
 <!-- render the partial _form.html.erb -->
 <!-- This will include the HTML generated in this form partial here -->
 <%= render 'form' %>
+
+<%= link_to 'Back', parks_path %>

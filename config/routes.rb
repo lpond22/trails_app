@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :users, except: [:new, :create]
+
 end
