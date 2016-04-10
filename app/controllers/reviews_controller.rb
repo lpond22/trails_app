@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @park.reviews.new(review_params)
+    @review.user = current_user
     if @review.save
       redirect_to park_reviews_path(@park), notice: 'Created a Review'
     else

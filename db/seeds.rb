@@ -9,10 +9,10 @@ p4 = Park.create!(name: 'Mass Audubon Wildlife Sanctuaries', city: 'Mattapan', s
 
 puts "Created four parks"
 
-p1.reviews.create!(content: 'Beautiful hiking, my dog loved it! Too bad we couldn\'t go into the water', email: 'boshiking@email.com')
-p2.reviews.create!(content: 'A bit too crowed for me', email: 'sawyer@email.com')
-p3.reviews.create!(content: 'Our absolute favorite place to explore. Never get tired of it.', email: 'beth@email.com')
-p4.reviews.create!(content: 'Too bad my dog couldn\'t come, he would love to chase the ducks.', email: 'birdwatcher@gmail.com')
+p1.reviews.create!(content: 'Beautiful hiking, my dog loved it! Too bad we couldn\'t go into the water', user: laura)
+p2.reviews.create!(content: 'A bit too crowed for me', user: sawyer)
+p3.reviews.create!(content: 'Our absolute favorite place to explore. Never get tired of it.', user: sean)
+p4.reviews.create!(content: 'Too bad my dog couldn\'t come, he would love to chase the ducks.', user: bob)
 
 puts "Created a few reviews"
 

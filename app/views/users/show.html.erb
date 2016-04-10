@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Parks', parks_path %></li>
+  <li><%= link_to 'New Park', new_park_path %></li>
+  <li class="active"><%= link_to 'Your Account', user_registration_path %></li>
+  <li><%= link_to 'All Users', user_path %></li>
+</ul>
 
 <p>
   <strong>First name:</strong>
@@ -16,8 +18,25 @@
 </p>
 
 <p>
+  <strong>Email:</strong>
+  <a href="mailto:#"><%= @user.email %></a>
+</p>
+
+<p>
   <strong>Admin:</strong>
   <%= @user.admin %>
+</p>
+
+
+<p>
+  Parks Reviews
+  <ul>
+    <% @user.reviews.each do |review| %>
+     <li><%= link_to('Review', movie_review_path(review.movie, review)) %>
+     for <%= review.movie.name %>,
+     created <%= time_ago_in_words(review.created_at) %> ago</li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
