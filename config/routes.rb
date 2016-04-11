@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #resources :trails
-  #devise_for :users
+  devise_for :users
 
   root to: 'parks#index'
 

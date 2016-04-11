@@ -19,7 +19,7 @@ class TrailsController < ApplicationController
   def create
     @trail = @park.trails.new(trail_params)
     if @trail.save
-      redirect_to_park_trails_path(@park), notice: 'Created a Trail'
+      redirect_to park_trails_path(@park), notice: 'Created a Trail'
     else
       render :new
     end
@@ -33,6 +33,8 @@ class TrailsController < ApplicationController
 
   def trail_params
     params.require(:trail).permit(:content, :email)
+  end
+end
 
 #   # GET /trails
 #   # GET /trails.json
@@ -104,4 +106,3 @@ class TrailsController < ApplicationController
 #     def trail_params
 #       params.require(:trail).permit(:name, :length, :diffculty, :rating)
 #     end
- end

@@ -24,7 +24,7 @@
       <td><%= park.dogs %></td>
         <!-- Only show links if we have a current, logged in, user -->
       <% if current_user %>
-      <td> <%= link_to"View Trails", trails_path(park.id), class: 'btn btn-primary btn-xs' %></td>
+      <td> <%= link_to"View Trails", park_trails_path(park.id), class: 'btn btn-primary btn-xs' %></td>
       <td> <%= link_to "Edit", edit_park_path(park.id), class: 'btn btn-primary btn-xs' %> </td>
       <td> <%= link_to 'Destroy', park_path(park.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       <% end %>
