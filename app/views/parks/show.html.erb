@@ -21,7 +21,7 @@
 
 <p>
   <%= @park.name %> has
-  <%= link_to_unless(@park.reviews.empty?, "#{@park.reviews.size} reviews", park_review_path(@park.id)) do
+  <%= link_to_unless(@park.trails.empty?, "#{@park.trails.size} reviews", park_trail_path(@park.id)) do
       "no reviews"
    end
   %>

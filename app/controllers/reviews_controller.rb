@@ -1,25 +1,25 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_park
+  before_action :set_trail
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @reviews = @park.reviews
+    @reviews = @trail.reviews
   end
 
   def show
-    @review = @park.reviews.find(params[:id])
+    @review = @trail.reviews.find(params[:id])
   end
 
   def new
-    @review = @park.reviews.new
+    @review = @trail.reviews.new
   end
 
   def create
-    @review = @park.reviews.new(review_params)
+    @review = @trail.reviews.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to park_reviews_path(@park), notice: 'Created a Review'
+      redirect_to trail_reviews_path(@trail), notice: 'Created a Review'
     else
       render :new
     end
@@ -32,6 +32,6 @@ class ReviewsController < ApplicationController
   end
 
   def set_park
-    @park = Park.find(params[:park_id])
+    @trail = Trail.find(params[:park_id])
   end
 end

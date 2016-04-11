@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  #resources :trails
+  #devise_for :users
 
   root to: 'parks#index'
 
   resources :parks do
-    resources :reviews
+    resources :trails
   end
 
   resources :users, except: [:new, :create]

@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
   belongs_to :user
-  belongs_to :parks
+  belongs_to :trail
 
   validates :content, presence: true
 

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trail.name %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @trail.length %>
+</p>
+
+<p>
+  <strong>Diffculty:</strong>
+  <%= @trail.diffculty %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @trail.rating %>
+</p>
+
+<p>
+  <%= @trail.name %> has
+  <%= link_to_unless(@trail.reviews.empty?, "#{@trail.reviews.size} reviews", trail_reviews_path(@trail.id)) do
+      "no reviews"
+   end
+  %>
+
+
+<%= link_to 'Edit', edit_trail_path(@trail) %> |
+<%= link_to 'Back', trails_path %>
