@@ -4,6 +4,8 @@ class TrailsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index]
 
+  has_many :users, through: :reviews
+
   def index
     @trails = @park.trails
   end

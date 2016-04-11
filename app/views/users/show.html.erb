@@ -26,11 +26,11 @@
 
 
 <p>
-  Parks Reviews
+  Trails Reviews
   <ul>
     <% @user.reviews.each do |review| %>
-     <li><%= link_to('Review', movie_review_path(review.movie, review)) %>
-     for <%= review.movie.name %>,
+     <li><%= link_to('Review', trail_review_path(review.trail, review)) %>
+     for <%= review.trail.name %>,
      created <%= time_ago_in_words(review.created_at) %> ago</li>
     <% end %>
   </ul>

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :trails
   end
 
+    resources :trails do
+    resources :reviews
+  end
+
   resources :users, except: [:new, :create]
 
 end

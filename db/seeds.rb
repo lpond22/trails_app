@@ -1,5 +1,5 @@
-Review.delete_all
 User.delete_all
+Review.delete_all
 Trail.delete_all
 Park.delete_all
 
@@ -25,6 +25,14 @@ t12 = p4.trails.create!(name: 'Pine Trail', length: 2, diffculty: 'Hard')
 
 puts "Created many trails"
 
+laura = User.create!(email: 'laura@email.com', password: 'password', password_confirmation: 'password', first_name: 'Laura', last_name: 'Pond', admin: false)
+sawyer = User.create!(email:'sawyer@email.com', password: 'password', password_confirmation: 'password', first_name: 'Sawyer', last_name: 'Dog', admin: false)
+sean = User.create!(email: 'sean@email.com', password: 'password', password_confirmation: 'password', first_name: 'Sean', last_name: 'Gilpatrick', admin: false)
+bob = User.create!(email: 'bob@email.com', password: 'password', password_confirmation: 'password', first_name: 'Bob', last_name: 'Sagat', admin: true)
+
+puts "Created a few users"
+
+
 t1.reviews.create!(content: 'Beautiful hiking, my dog loved it! Too bad we couldn\'t go into the water', user: laura)
 t2.reviews.create!(content: 'A bit too crowed for me', user: sawyer)
 t3.reviews.create!(content: 'Our absolute favorite place to explore. Never get tired of it.', user: sean)
@@ -32,9 +40,3 @@ t4.reviews.create!(content: 'Too bad my dog couldn\'t come, he would love to cha
 
 puts "Created a few reviews"
 
-laura = User.create!(email: 'laura@email.com', password: 'password', password_confirmation: 'password', first_name: 'Laura', last_name: 'Pond', admin: false)
-sawyer = User.create!(email:'sawyer@email.com', password: 'password', password_confirmation: 'password', first_name: 'Sawyer', last_name: 'Dog', admin: false)
-sean = User.create!(email: 'sean@email.com', password: 'password', password_confirmation: 'password', first_name: 'Sean', last_name: 'Gilpatrick', admin: false)
-bob = User.create!(email: 'bob@email.com', password: 'password', password_confirmation: 'password', first_name: 'Bob', last_name: 'Sagat', admin: true)
-
-puts "Created a few users"

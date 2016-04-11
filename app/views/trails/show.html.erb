@@ -26,7 +26,17 @@
       "no reviews"
    end
   %>
-
+<p>
+  <%= @trail.name %> been reviewed by
+  <% unless @trail.users.empty? %>
+    <%= @trail.users.uniq.map(&:full_name).join(', ') %>
+  <% else %>
+    no users.
+  <% end %>
+</p>
+<p>
+Create a <%= link_to 'Review', new_trail_review_path(@trail.id) %>
+</p>
 
 <%= link_to 'Edit', edit_trail_path(@trail) %> |
 <%= link_to 'Back', trails_path %>

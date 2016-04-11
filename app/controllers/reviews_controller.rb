@@ -32,6 +32,6 @@ class ReviewsController < ApplicationController
   end
 
   def set_park
-    @trail = Trail.find(params[:park_id])
+    @trail = Trail.find(params[:trail_id])
   end
 end
