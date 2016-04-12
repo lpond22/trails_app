@@ -19,21 +19,4 @@
   <dd><%= @park.hikes %></dd>
 </dl>
 
-<p>
-  <%= @park.name %> has
-  <%= link_to_unless(@park.trails.empty?, "#{@park.trails.size} reviews", park_trail_path(@park.id)) do
-      "no reviews"
-   end
-  %>
-</p>
-<p>
-  <%= @park.name %> been reviewed by
-  <% unless @park.users.empty? %>
-    <%= @park.users.uniq.map(&:full_name).join(', ') %>
-  <% else %>
-    no users.
-  <% end %>
-</p>
-<p>
-Create a <%= link_to 'Review', new_park_review_path(@park.id) %>
-</p>
+

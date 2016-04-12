@@ -1,7 +1,7 @@
-User.delete_all
 Review.delete_all
 Trail.delete_all
 Park.delete_all
+User.delete_all
 
 p1 = Park.create!(name:'Middlesex Fells Reservation', city: 'Boston', state: 'MA', region: 'northeast', dogs: true, hikes: 5)
 p2 = Park.create!(name: 'Blue Hills Reservation', city: 'Milton', state: 'MA', region: 'eastern', dogs: true, hikes: 10)
