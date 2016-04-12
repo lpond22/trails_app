@@ -1,6 +1,7 @@
 <ul class="nav nav-tabs" role="tablist">
   <li><%= link_to 'View Parks', parks_path %></li>
   <li><%= link_to 'New Park', new_park_path %></li>
+  <li class="active"><%= link_to 'New Review', new_trail_review_path(@trail.id) %></li>
   <% if current_user %><li><%= link_to 'Your Account', edit_user_registration_path %></li><% end %>
 </ul>
 
@@ -9,14 +10,15 @@
 </header>
 <ul>
   <% @reviews.each do |review| %>
- <li> <%= truncate(review.content, length: 20) %>
-    | <em>Reviewed by <%= review.user.full_name %></em>
-    | <%= link_to("Show", trail_review_path(@trail.id, review.id)) %>
+ <li> <%= review.content %>
+    | <em>Reviewed by <%= review.user.full_name %></em>, created <%= time_ago_in_words(review.created_at) %> ago
 
   </li>
 
   <% end %>
 
+
+
   <hr/><br/>
-  <%= link_to "Create a New Review", new_trail_review_path(@trail.id) %>
+
     </ul>
