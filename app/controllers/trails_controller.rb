@@ -29,12 +29,12 @@ class TrailsController < ApplicationController
 
   private
 
-  def set_park
-    @park = Park.find(params[:park_id])
-  end
-
   def trail_params
     params.require(:trail).permit(:content, :email)
+  end
+
+    def set_park
+    @park = Park.find(params[:park_id])
   end
 end
 
