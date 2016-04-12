@@ -10,18 +10,18 @@ p4 = Park.create!(name: 'Mass Audubon Wildlife Sanctuaries', city: 'Mattapan', s
 
 puts "Created four parks"
 
-t1 = p1.trails.create!(name: 'Skyline Trail', length: 7, diffculty: 'Hard')
-t2 = p1.trails.create!(name: 'Cross Fells trail', length: 4.5, diffculty: 'Easy')
-t3 = p1.trails.create!(name: 'Bear Hill Trail', length: 0.2, diffculty: 'Easy')
-t4 = p1.trails.create!(name: 'Rock Circuit Trail', length: 3.7, diffculty: 'Medium')
-t5 = p2.trails.create!(name: 'Chickatawbut', length: 3.2 , diffculty: 'Medium')
-t6 = p3.trails.create!(name: 'Slide Notch Path', length: 2,  diffculty: 'Hard')
-t7 = p3.trails.create!(name: 'Dark Hollow', length: 9,  diffculty: 'Hard')
-t8 = p3.trails.create!(name: 'Hancock Hill', length: 3, diffculty: 'Easy')
-t9 = p3.trails.create!(name: 'Old Concord Road', length: 4,  diffculty: 'Easy')
-t10 = p4.trails.create!(name: 'Witches\' Cove Trail', length: 0.5,  diffculty: 'Medium')
-t11 = p4.trails.create!(name: 'Desert Loop', length: 4,  diffculty: 'Medium')
-t12 = p4.trails.create!(name: 'Pine Trail', length: 2, diffculty: 'Hard')
+t1 = p1.trails.create!(name: 'Skyline Trail', length: 7, difficulty: 'Hard')
+t2 = p1.trails.create!(name: 'Cross Fells trail', length: 4.5, difficulty: 'Easy')
+t3 = p1.trails.create!(name: 'Bear Hill Trail', length: 0.2, difficulty: 'Easy')
+t4 = p1.trails.create!(name: 'Rock Circuit Trail', length: 3.7, difficulty: 'Medium')
+t5 = p2.trails.create!(name: 'Chickatawbut', length: 3.2 , difficulty: 'Medium')
+t6 = p3.trails.create!(name: 'Slide Notch Path', length: 2,  difficulty: 'Hard')
+t7 = p3.trails.create!(name: 'Dark Hollow', length: 9,  difficulty: 'Hard')
+t8 = p3.trails.create!(name: 'Hancock Hill', length: 3, difficulty: 'Easy')
+t9 = p3.trails.create!(name: 'Old Concord Road', length: 4,  difficulty: 'Easy')
+t10 = p4.trails.create!(name: 'Witches\' Cove Trail', length: 0.5,  difficulty: 'Medium')
+t11 = p4.trails.create!(name: 'Desert Loop', length: 4,  difficulty: 'Medium')
+t12 = p4.trails.create!(name: 'Pine Trail', length: 2, difficulty: 'Hard')
 
 puts "Created many trails"
 
@@ -33,10 +33,10 @@ bob = User.create!(email: 'bob@email.com', password: 'password', password_confir
 puts "Created a few users"
 
 
-t1.reviews.create!(content: 'Beautiful hiking, my dog loved it! Too bad we couldn\'t go into the water', user: laura)
-t2.reviews.create!(content: 'A bit too crowed for me', user: sawyer)
-t3.reviews.create!(content: 'Our absolute favorite place to explore. Never get tired of it.', user: sean)
-t4.reviews.create!(content: 'Too bad my dog couldn\'t come, he would love to chase the ducks.', user: bob)
+t1.reviews.create!(rating: 5, content: 'Beautiful hiking, my dog loved it! Too bad we couldn\'t go into the water', user: laura)
+t2.reviews.create!(rating: 2, content: 'A bit too crowded for me', user: sawyer)
+t3.reviews.create!(rating: 4, content: 'Our absolute favorite place to explore. Never get tired of it.', user: sean)
+t4.reviews.create!(rating: 3, content: 'Too bad my dog couldn\'t come, he would love to chase the ducks.', user: bob)
 
 puts "Created a few reviews"
 

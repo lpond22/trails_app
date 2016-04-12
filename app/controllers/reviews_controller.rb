@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:content, :email)
   end
 
-  def set_park
+  def set_trail
     @trail = Trail.find(params[:trail_id])
   end
 end

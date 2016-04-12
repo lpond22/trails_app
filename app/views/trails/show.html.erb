@@ -11,13 +11,8 @@
 </p>
 
 <p>
-  <strong>Diffculty:</strong>
-  <%= @trail.diffculty %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @trail.rating %>
+  <strong>Difficulty:</strong>
+  <%= @trail.difficulty %>
 </p>
 
 <p>
@@ -26,14 +21,7 @@
       "no reviews"
    end
   %>
-<p>
-  <%= @trail.name %> been reviewed by
-  <% unless @trail.users.empty? %>
-    <%= @trail.users.uniq.map(&:full_name).join(', ') %>
-  <% else %>
-    no users.
-  <% end %>
-</p>
+
 <p>
 Create a <%= link_to 'Review', new_trail_review_path(@trail.id) %>
 </p>

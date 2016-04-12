@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160411222121) do
 
   create_table "reviews", force: :cascade do |t|
     t.string   "content"
+    t.integer  "rating"
     t.integer  "trail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,8 +38,7 @@ ActiveRecord::Schema.define(version: 20160411222121) do
   create_table "trails", force: :cascade do |t|
     t.string   "name"
     t.integer  "length"
-    t.string   "diffculty"
-    t.string   "rating"
+    t.string   "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "park_id"

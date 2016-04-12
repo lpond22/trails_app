@@ -1,5 +1,5 @@
 <header>
-  <h2><%= @review.user.email %>'s review of <%= link_to(@review.trail.name, trail_path(@trail)) %></h2>
+  <h2><%= @review.user.full_name %>'s review of <%= link_to(@review.trail.name, park_trails_path(@trail)) %></h2>
 </header>
 <p>
   <%= @review.content %>

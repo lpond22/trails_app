@@ -7,8 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Length in Miles</th>
-      <th>Diffculty</th>
-      <th>Rating</th>
+      <th>Difficulty</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,16 +17,11 @@
       <tr>
         <td><%= trail.name %></td>
         <td><%= trail.length %></td>
-        <td><%= trail.diffculty %></td>
-        <td><%= trail.rating %></td>
-        <td><%= link_to 'Show', park_trail_path(@park.id, trail.id) %></td>
+        <td><%= trail.difficulty %></td>
+        <td><%= link_to 'View Reviews', trail_reviews_path(trail.id) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-
-
-<%= link_to 'New Trail', new_park_trail_path(@trail.id) %>

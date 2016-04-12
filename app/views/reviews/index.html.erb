@@ -3,7 +3,7 @@
 </header>
 <ul>
   <% @reviews.each do |review| %>
- <li> <%= truncate(review.content, length: 10) %>
+ <li> <%= truncate(review.content, length: 20) %>
     | <em>Reviewed by <%= link_to(review.user.full_name, users_path(review.user)) %></em>
     | <%= link_to("Show", trail_review_path(@trail.id, review.id)) %>
 
