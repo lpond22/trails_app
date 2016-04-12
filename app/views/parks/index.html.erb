@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><%= link_to 'View Parks', parks_path %></li>
-  <li><%= link_to 'New Park', new_park_path %></li>
-  <% if current_user %><li><%= link_to 'Your Account', edit_user_registration_path %></li><% end %>
+  <% if current_user %><li><%= link_to 'New Park', new_park_path %></li>
+  <li><%= link_to 'Your Account', edit_user_registration_path %></li><% end %>
 </ul>
 
 <h2>Most Popular Parks</h2>

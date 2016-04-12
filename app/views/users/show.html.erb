@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs" role="tablist">
   <li><%= link_to 'View Parks', parks_path %></li>
-  <li><%= link_to 'New Park', new_park_path %></li>
-  <li class="active"><%= link_to 'Your Account', user_registration_path %></li>
+  <% if current_user %><li><%= link_to 'New Park', new_park_path %></li>
+  <li class="active"><%= link_to 'Your Account', user_registration_path %></li><% end %>
 </ul>
 
 <p>
@@ -19,10 +19,6 @@
   <a href="mailto:#"><%= @user.email %></a>
 </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
 
 
 <p>

@@ -15,7 +15,7 @@ class TrailsController < ApplicationController
   end
 
   def new
-    @trail = @park.trail.new
+    @trail = @park.trails.new
   end
 
   def create
