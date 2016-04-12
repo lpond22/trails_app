@@ -8,7 +8,7 @@
   <% if current_user %><li><%= link_to 'Your Account', edit_user_registration_path %></li><% end %>
 </ul>
 
-<h1>Trails at <%= link_to(@park.name, @park) %></h1>
+<h1>Trails at <%= link_to(@park.name, parks_path) %></h1>
 
 <table class ="table table-hover">
   <thead>
