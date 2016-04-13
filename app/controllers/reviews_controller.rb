@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :email)
+    params.require(:review).permit(:content, :rating)
   end
 
   def set_trail

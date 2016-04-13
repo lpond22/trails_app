@@ -1,10 +1,10 @@
 class TrailsController < ApplicationController
 
-  before_action :set_park
+
 
   before_action :authenticate_user!, except: [:index]
 
-  #has_many :users, through: :reviews
+    before_action :set_park
 
   def index
     @trails = @park.trails
@@ -21,7 +21,7 @@ class TrailsController < ApplicationController
   def create
     @trail = @park.trails.new(trail_params)
     if @trail.save
-      redirect_to park_trails_path(@park), notice: 'Created a Trail'
+      redirect_to park_trails_path(@trail.park_id), notice: 'Created a Trail'
     else
       render :new
     end

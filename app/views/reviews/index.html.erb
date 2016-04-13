@@ -1,13 +1,12 @@
 
 <ul class="nav nav-tabs" role="tablist">
   <li><%= link_to 'View Parks', parks_path %></li>
-  <li><%= link_to 'New Park', new_park_path %></li>
-  <li class="active"><%= link_to 'New Review', new_trail_review_path(@trail.id) %></li>
-  <% if current_user %><li><%= link_to 'Your Account', edit_user_registration_path %></li><% end %>
+  <li class="active"><%= link_to(@trail.name, park_trails_path(@trail.park_id)) %></li>
+  <li><%= link_to 'New Review', new_trail_review_path(@trail.id) %></li>
 </ul>
 
 <header>
-  <h1>Reviews for <%= link_to(@trail.name, park_trails_path(@trail)) %></h1>
+  <h1>Reviews for <%= link_to(@trail.name, park_trails_path(@trail.park_id)) %></h1>
 </header>
 <ul>
   <% @reviews.each do |review| %>

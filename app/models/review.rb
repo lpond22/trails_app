@@ -1,9 +1,9 @@
 class Review < ActiveRecord::Base
 
-    belongs_to :trail
-    belongs_to :user
- RATINGS = [1, 2, 3, 4 ,5]
-  validates :content, presence: true
+  belongs_to :trail
+  belongs_to :user
 
-validates :rating, inclusion: { in: RATINGS , message: "Rating must be 1 - 5" }
+  validates :content, presence: true
+  validates :rating, numericality: {greater_than: 0, less_than: 6}
+
 end

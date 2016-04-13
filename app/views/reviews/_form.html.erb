@@ -3,8 +3,7 @@
 
 <% if @review.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from b\
-    eing saved:</h2>
+  <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
   <ul>
     <% @review.errors.full_messages.each do |message| %>
@@ -15,6 +14,7 @@
 <% end %>
 
 <fieldset>
+<div class= "well">
   <ul>
     <li>
       <!-- Helper to generate a text area for the review content -->
@@ -22,13 +22,13 @@
       <%= f.text_area :content %>
     </li>
         <li>
-      <!-- Helper to generate a text area for the review content -->
       <%= f.label :rating %>
-      <%= f.select :rating, Trail::RATINGS.to_a.map { |r| [r, r] }, include_blank: true %>
+      <%= f.number_field :rating %>
     </li>
   </ul>
   <p>
     <%= f.submit %><br/>
   </p>
+  </div>
 </fieldset>
 <% end %>

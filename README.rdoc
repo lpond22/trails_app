@@ -1,28 +1,14 @@
-== README
+Must have setup and/or install instructions in the README.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Application Overview:
 
-Things you may want to cover:
+The purpose of the application is to view and review trails within New England to help hikers find exciting and interesting trails near them.
 
-* Ruby version
+User Stories:
 
-* System dependencies
+A Park has many Trails.
+A Trail has many Reviews.
+A User can Review many Trails.
+A User can add new Parks and Trails.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Setup:
