@@ -12,3 +12,12 @@ A User can Review many Trails.
 A User can add new Parks and Trails.
 
 Setup:
+
+Install the gems from the gemfile
+
+run rail server
+
+visit localhost:3000 on your browser!
+
+Known Errors:
+- Unable to create a new trail

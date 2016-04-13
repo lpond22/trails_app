@@ -1,10 +1,8 @@
 class TrailsController < ApplicationController
 
-
+    before_action :set_park
 
   before_action :authenticate_user!, except: [:index]
-
-    before_action :set_park
 
   def index
     @trails = @park.trails
@@ -21,7 +19,7 @@ class TrailsController < ApplicationController
   def create
     @trail = @park.trails.new(trail_params)
     if @trail.save
-      redirect_to park_trails_path(@trail.park_id), notice: 'Created a Trail'
+      redirect_to park_trails_path(@park), notice: 'Created a Trail'
     else
       render :new
     end
@@ -29,12 +27,14 @@ class TrailsController < ApplicationController
 
   private
 
-  def set_park
-    @park = Park.find(params[:park_id])
-  end
+
 
   def trail_params
     params.require(:trail).permit(:name, :length, :difficulty)
+  end
+
+    def set_park
+    @park = Park.find(params[:park_id])
   end
 
 
