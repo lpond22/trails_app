@@ -21,6 +21,11 @@
       <%= f.label :content %>
       <%= f.text_area :content %>
     </li>
+        <li>
+      <!-- Helper to generate a text area for the review content -->
+      <%= f.label :rating %>
+      <%= f.select :rating, Trail::RATINGS.to_a.map { |r| [r, r] }, include_blank: true %>
+    </li>
   </ul>
   <p>
     <%= f.submit %><br/>

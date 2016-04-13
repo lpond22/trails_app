@@ -7,6 +7,10 @@ class ReviewsController < ApplicationController
     @reviews = @trail.reviews
   end
 
+  def average
+    @reviews = @reviews.average(:rating)
+  end
+
   def show
     @review = @trail.reviews.find(params[:id])
   end
